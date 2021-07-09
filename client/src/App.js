@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {Typography, AppBar} from '@material-ui/core';
 import VideoPlayer from './components/VideoPlayer';
 import Notifications from './components/Notifications';
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-export const App = () => {
+const App = () => {
     const classes = useStyles();
     return (
         <div className={classes.wrapper}>
@@ -40,11 +40,11 @@ export const App = () => {
             </AppBar>
             {/* Video Player */}
             <VideoPlayer />
-                <Options>
-                    <Notifications />
-                </Options>
+            <Options>
+              <Notifications />
+            </Options>
         </div>
-    )
-}
+    );
+};
 
 export default App;
