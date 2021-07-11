@@ -31,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
     padding: {
       padding: 20,
     },
+
     paper: {
       padding: '10px 20px',
-      border: '2px solid black',
     },
    }));
   
@@ -49,25 +49,24 @@ const Options = ({children}) => {
                     <Grid container className = {classes.gridContainer}>
                         <Grid item xs={12} md={6} className={classes.padding}>
                             <Typography gutterBottom varient="h6">Account Info</Typography>
-                            <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth/>
+                            <TextField variant="outlined" label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth/>
                             {console.log(me)}
                             <CopyToClipboard text={me} className={classes.margin}>
-                                <Button varient="contained" color="primary" fullwidth startIcon={<Assignment fontSize="large"/>} >
+                                <Button varient="contained" color="#29323c" fullwidth startIcon={<Assignment fontSize="large"/>} >
                                   Copy Your ID
                                 </Button>
                             </CopyToClipboard>
-
                         </Grid>
                         <Grid item xs={12} md={6} className={classes.padding}>
                             <Typography gutterBottom varient="h6">Make a call</Typography>
-                            <TextField label="ID to Call" value={idToCall} onChange={(e) => setIdToCall(e.target.value)} fullWidth/>
+                            <TextField variant="outlined" label="ID to Call" value={idToCall} onChange={(e) => setIdToCall(e.target.value)} fullWidth/>
                             {
                               callAccepted && !callEnded ? (
-                                <Button variant = "contained" color = "secondary" startIcon = {<PhoneDisabled fontsize = "large"/>} fullwidth onClick={leaveCall} className={classes.margin}>
+                                <Button variant = "contained" color = 'red[500]' startIcon = {<PhoneDisabled fontsize = "large"/>} fullwidth onClick={leaveCall} className={classes.margin}>
                                    Hang Up 
                                 </Button>
                               ) : (
-                                <Button variant = "contained" color = "primary" startIcon = {<Phone fontsize = "large"/>} fullwidth onClick={() => callUser(idToCall)} className={classes.margin}> 
+                                <Button variant = "contained" color = "#29323" startIcon = {<Phone fontsize = "large"/>} fullwidth onClick={() => callUser(idToCall)} className={classes.margin}> 
                                   Call 
                                 </Button>
                             )}

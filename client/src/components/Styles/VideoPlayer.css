@@ -1,0 +1,21 @@
+h5 {
+    font-size: larger;
+    color: white;
+    margin-left: 5%;
+    font-family: cursive;
+}
+
+h2 {
+    font-size: larger;
+    color: white;
+    margin-left: 5%;
+    font-family: monospace;
+}
+
+
+
+video {
+   border-radius: 4%;
+   padding: '10px';
+   margin: '10px';
+}
