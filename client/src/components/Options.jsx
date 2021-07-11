@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
       padding: 20,
     },
 
+    TextField: {
+      borderColor: '#1f1f1f',
+    },
+
     paper: {
       padding: '10px 20px',
     },

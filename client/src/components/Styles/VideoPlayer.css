@@ -12,7 +12,9 @@ h2 {
     font-family: monospace;
 }
 
-
+button {
+    background-color: red;
+}
 
 video {
    border-radius: 4%;
