@@ -4,6 +4,7 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
+//backend deployed url
 const socket = io('https://ms-team01.herokuapp.com/');
 
 const ContextProvider = ({children}) =>{
@@ -20,6 +21,7 @@ const ContextProvider = ({children}) =>{
     const userVideo = useRef();
     const connectionRef = useRef();
 
+    //Permission for using camera and microphone
     useEffect (() => {
         navigator.mediaDevices.getUserMedia({
             video: true,
@@ -38,6 +40,8 @@ const ContextProvider = ({children}) =>{
         });
 
     }, []);
+
+    //Answering call
     const answerCall = () => {
         setCallAccepted(true);
 
@@ -57,6 +61,7 @@ const ContextProvider = ({children}) =>{
 
     };
 
+    //call user
     const callUser = (id) => {
         const peer = new Peer({initiator: true, trickle: false, stream});
 
@@ -77,6 +82,7 @@ const ContextProvider = ({children}) =>{
         connectionRef.current = peer;
     };
     
+    //Leave call
     const leaveCall = () => {
         setCallEnded(true);
         connectionRef.current.destroy();

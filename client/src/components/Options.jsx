@@ -5,7 +5,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
 import {SocketContext} from '../SocketContext';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -51,25 +50,31 @@ const Options = ({children}) => {
             <Paper elevation={10} className={classes.paper} >
                 <form className={classes.root} noValidate autoComplete="off">
                     <Grid container className = {classes.gridContainer}>
+                        {/* Account information module */}
                         <Grid item xs={12} md={6} className={classes.padding}>
+                          {/* Enter Account Information */}
                             <Typography gutterBottom varient="h6">Account Info</Typography>
                             <TextField variant="outlined" label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth/>
-                            {console.log(me)}
+                            {/* Copy Id to clipboard */}
                             <CopyToClipboard text={me} className={classes.margin}>
                                 <Button varient="contained" color="#29323c" fullwidth startIcon={<Assignment fontSize="large"/>} >
                                   Copy Your ID
                                 </Button>
                             </CopyToClipboard>
                         </Grid>
+
+                        {/* Caling  module */}
                         <Grid item xs={12} md={6} className={classes.padding}>
                             <Typography gutterBottom varient="h6">Make a call</Typography>
                             <TextField variant="outlined" label="ID to Call" value={idToCall} onChange={(e) => setIdToCall(e.target.value)} fullWidth/>
                             {
                               callAccepted && !callEnded ? (
+                                // if call is accepted
                                 <Button variant = "contained" color = 'red[500]' startIcon = {<PhoneDisabled fontsize = "large"/>} fullwidth onClick={leaveCall} className={classes.margin}>
                                    Hang Up 
                                 </Button>
                               ) : (
+                                // Call user
                                 <Button variant = "contained" color = "#29323" startIcon = {<Phone fontsize = "large"/>} fullwidth onClick={() => callUser(idToCall)} className={classes.margin}> 
                                   Call 
                                 </Button>

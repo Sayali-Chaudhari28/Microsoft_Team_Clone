@@ -34,6 +34,8 @@ const App = () => {
             </AppBar>
             {/* Video Player */}
             <VideoPlayer />
+            
+            {/* calling module */}
             <Options>
               <Notifications />
             </Options>
